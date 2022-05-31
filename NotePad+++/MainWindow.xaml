@@ -1,0 +1,62 @@
+﻿<Window x:Class="Notepad___.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Notepad___"
+        mc:Ignorable="d"
+        
+        Title="Notepad++" Height="643" Width="1000"  >
+    <DockPanel Name="myDockPanel" Margin="0,0,0,0">
+        <Menu Name="myMenu" DockPanel.Dock="Top">
+            <MenuItem Header="_File" >
+                <MenuItem Header="_New" Click="btnNewFile_Click"/>
+                <MenuItem Name="btnOpenFile" Click="btnOpenFile_Click" Header="_Open" />
+                <MenuItem Name="btnSaveFile" Click="btnSaveFile_Click" Header="_Save" />
+                <MenuItem Name="btnSaveAs" Click="btnSaveFile_Click" Header="_Save As"/>
+                <Separator />
+                <MenuItem Header="_Exit" Click="bntExit_Click" />
+            </MenuItem>
+           
+            <MenuItem Name="btnAbout" Click="btnAbout_Click" Header="_About">
+            </MenuItem>
+        </Menu>
+
+        <ToolBar Name="toolBar" Height="24" DockPanel.Dock="Top" >
+            <Button Name="addNewFile" Click="btnNewFile_Click" >
+                <Image Source="/Resources/addFileButton.png" />
+            </Button>
+            <Separator />
+            <Button Name="openFile"  Click="btnOpenFile_Click" >
+                <Image Source="/Resources/openFileButton.jpg"/>
+            </Button>
+            <Separator/>
+            <Button Name="saveFile" Click="btnSaveFile_Click" >
+                <Image Source="/Resources/saveFileButton.jpg"/>
+            </Button>
+            <Separator/>
+            <Separator/>
+            <Button Name="closeFile" Click="closeTab_Click">
+                <Image Source="/Resources/closeButton.jpg"/>
+            </Button>
+            <Separator/>
+            <Button Name="calendar" Click="showCalendar">
+                <Image Source="/Resources/calendar.jpg"/>
+            </Button>
+            <Separator/>
+            <Button Name="darkMode" Click="darkModeWindow">
+                <Image Source="/Resources/moon.jpg"/>
+            </Button>
+            <Separator/>
+        </ToolBar>
+        <TabControl DockPanel.Dock="Top" Name="tabControl1"  Height="500" ></TabControl>
+        <Button Background="Gray"  Width="5" Height="83" Click="ButtonDirectoryList_Click" >Open Directory Tree</Button>
+        <TreeView x:Name="treeViewDir" DockPanel.Dock="Bottom" Background="#FFBDB0D8" RenderTransformOrigin="-4.428,3" Height="83" Width="927" Visibility="Hidden" >
+        </TreeView>
+    </DockPanel>
+    
+  
+
+
+</Window>
+    
